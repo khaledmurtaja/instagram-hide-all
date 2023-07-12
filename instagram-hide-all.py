@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from instagram_private_api import Client
 from instagram_private_api.http import ClientCookieJar
 from instagram_private_api.compat import compat_pickle
