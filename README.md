@@ -1,4 +1,4 @@
-<h1 align="center">Instagram Hide All</h1>
+<h1 align="center">Instagram Hide All(easier version of the forked repository)</h1>
 
 <div align="center">
     <img src="./screenshot.gif">
@@ -7,7 +7,8 @@
 <h2>Temporary hide/unhide your Instagram stories from all of your followers.<h2>
 
 
-## Requirements
+
+## Requirements(you will need them only in case you did not use the exe files in the releases section)
 - [Python 3](https://www.python.org/)
 - [PIP](https://pip.pypa.io/en/stable)
 
