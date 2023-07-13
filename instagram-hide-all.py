@@ -10,12 +10,13 @@ import time
 
 api = None
 
+
 def list_diff(a, b):
     return [x for x in a if x not in b]
 
 
 def show_help():
-    print("----------------------------------------------------------------------------")
+    print("----------------------------------bykhaled------------------------------------------")
     print("---------------------------- instagram-hide-all ----------------------------")
     print("----------------------------------------------------------------------------")
     print("[https://github.com/amir9480/instagram-hide-all]\n")
@@ -103,7 +104,7 @@ def hide_all():
         exit(1)
     info = file_get_contents('info.json', 'r', True)
     api.set_reel_block_status(safe_ids(), 'block')
-    print("All your followers can not see your stories anymore.")
+    print("All your followers can not see your stories anymore.😎😎")
 
 
 def unhide_all():
@@ -113,7 +114,7 @@ def unhide_all():
         exit(1)
     info = file_get_contents('info.json', 'r', True)
     api.set_reel_block_status(blocked_ids(), 'unblock')
-    print("All your followers can see your stories now.")
+    print("All your followers can see your stories now.🌚")
 
 
 def reset():
@@ -130,6 +131,7 @@ def reset():
 def main():
     global api
     try:
+        os.remove("data.bin")
         api = Client(None, None, settings=file_get_contents("data.bin", "rb"))
     except:
         if os.path.exists("data.bin"):
@@ -139,20 +141,17 @@ def main():
         api = Client(username, password)
 
     warnings.simplefilter("ignore")
+    s = input(" Do you want to hide or Un hide? 🤔")
 
-    command = sys.argv[1]  if len(sys.argv) >= 2 else None
+    # command = sys.argv[1]  if len(sys.argv) >= 2 else None
+    command = 'fetch'
 
     if command == 'fetch':
         fetch()
-    elif command == 'hide':
-        hide_all()
-    elif command == 'unhide':
-        unhide_all()
-    elif command == 'reset':
-        reset()
-    else:
-        show_help()
-
+        if s == "hide":
+            hide_all()
+        elif s == "unhide":
+            unhide_all()
     if os.path.exists("data.bin") == False:
         file_put_contents("data.bin", "wb", api.settings)
 
